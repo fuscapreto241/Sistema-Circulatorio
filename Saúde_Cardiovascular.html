@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde Cardiovascular</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- MENU -->
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="Coração.html">Coração</a>
+        <a href="Sangue_e_Vasos.html">Sangue e Vaso</a>
+        <a href="Saúde_Cardiovascular.html">Saúde Cardiovascular</a>
+        <a href="Sistema_Circulatório.html">Sistema Circulatório</a>
+        <a href="Quiz.html">Quiz</a>
+    </nav>
+
+    <main>
+        <section>
+
+            <!-- APRESENTAÇÃO -->
+            <h2>Saúde Cardiovascular</h2>
+
+            <div class="destaque-inicio">
+
+                <img src="imagens/ângulos.png" alt="Ilustração de ângulos">
+
+                <div class="texto-destaque">
+
+                    <h3>O que é o sistema cardiovascular?</h3>
+
+                    <p>é o conjunto de órgãos responsável por garantir a circulação do sangue por todo
+                        o corpo. Ele fornece oxigênio e nutrientes às células e remove resíduos 
+                        do metabolismo, como o gás carbônico</p>
+                    <p>
+                        Para uma saúde cardiovascular é necessário o bom funcionamento do coração e 
+                        dos vasos sanguíneos.
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Alguns problemas Cardiovascular -->
+            <div class="blocos-cardiovascular"> <!--Era o bloco-guerra-->
+
+                <button class="bloco-cardiovascular" onclick="mostrarBlocoCardiovascular('tipos-problemas')"> <!--mostrarBlocoGuerra e tipos-guerras-->
+
+                    <h3>Tipos de Problemas</h3>
+
+                    <p>
+                    Hipertensão arterial; Aterosclerose; Infarto; AVC 
+                    </p>
+                    <span>Clique para saber mais</span>
+
+                </button>
+
+                <div class="seta-cardiovascular">→</div> <!--seta-guerra-->
+
+                <button class="blocos-cardiovascular" onclick="mostrarBlocoCardiovascular('medidas-cuidar')">
+
+                    <h3>Como Cuidar?</h3>
+
+                    <p>Medidas importantes para manter a saúde.</p>
+
+                    <span>Clique para saber mais</span>
+
+                </button>
+
+            </div>
+
+            <!-- CONTEÚDO: TIPOS DE PROBLEMAS -->
+            <div id="tipos-problemas" class="conteudo-cardiovascular">
+
+                <h3>Tipos de Problemas Cardiovasculares</h3>
+
+                <p>
+                    - Hipertensão arterial: pressão do sangue persistentemente elevada. <br>
+                    - Aterosclerose: acúmulo de placas nas paredes das artérias, que podem dificultar a passagem do sangue. <br>
+                    - Infarto: ocorre quando o fluxo de sangue para uma parte do músculo cardíaco é interrompido, causando lesão. <br>
+                    - AVC (acidente vascular cerebral): acontece quando uma região do cérebro deixa de receber sangue adequadamente ou quando ocorre um sangramento cerebra<br>
+                </p>
+
+            </div>
+
+            <!-- CONTEÚDO: SAÚDE -->
+            <div id="medidas-cuidar" class="conteudo-cardiovascular"> <!--medidas e conteudo-guerra-->
+
+                <h3>Como cuidar da saúde cardiovascular?</h3>
+
+                <p>
+                    - Praticar atividades físicas regularmente.<br>
+                    - Manter uma alimentação equilibrada.<br>
+                    - Dormir bem.<br>
+                    - Evitar fumar e usar produtos com nicotina.<br>
+                    - Controlar a pressão arterial com acompanhamento de saúde. <br>
+                    - Evitar o consumo excessivo de sal. <br>
+                </p>
+
+            </div>
+
+        </section>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>Projeto de Sistema Circulatório</p>
+        <p>
+            Colégio São Luiz - Unidade 3 -
+            Stefanny Gonçalves, Gabriel Marques, Maria Eduarda Juliasse, Murilo Felix e Gustavo 3° ano A
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
