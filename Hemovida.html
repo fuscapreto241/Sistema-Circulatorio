@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f6">
+  <title>Missão: salvar vidas — Sistema circulatório</title>
+  <link rel="stylesheet" href="game.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Hemovida, início"><span class="brand-mark">♥</span><span>HEMO<span class="brand-light">VIDA</span></span></a>
+    <a class="top-cta" href="#jogo">Começar missão <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse-dot"></span> UMA MISSÃO QUE PODE SALVAR VIDAS</p>
+        <h1>Uma bolsa.<br>Uma vida.<br><span>Uma escolha.</span></h1>
+        <p class="hero-intro">No hospital, cada paciente espera por uma doação compatível. Você consegue encontrar a bolsa certa?</p>
+        <a class="button button-red" href="#jogo">Iniciar missão <span>→</span></a>
+        <div class="hero-note"><span class="note-icon">✳</span><span>Aprenda sobre os tipos sanguíneos<br>enquanto joga.</span></div>
+      </div>
+        <div class="hero-bottom">
+            <span>01 — CONHEÇA OS TIPOS</span>
+            <span>02 — ESCOLHA A BOLSA</span>
+            <span>03 — AJUDE O PACIENTE</span>
+        </div>
+    </section>
+
+    <section class="learn section-wrap" id="aprender">
+      <div class="section-heading"><div><p class="eyebrow">ANTES DE COMEÇAR</p><h2>Quatro tipos.<br><span>Uma grande diferença.</span></h2></div><p class="section-lede">O tipo sanguíneo depende de características presentes nas hemácias. No jogo, sua missão é combinar os tipos de forma compatível.</p></div>
+      <div class="blood-grid" aria-label="Resumo dos tipos sanguíneos">
+        <article class="blood-card card-a">
+        <div class="blood-symbol">A</div>
+        <div><h3>Tipo A</h3><p>Pode receber de A e O.</p></div>
+        <span class="card-arrow">↗</span>
+        </article>
+        <article class="blood-card card-b"><div class="blood-symbol">B</div><div><h3>Tipo B</h3><p>Pode receber de B e O.</p></div><span class="card-arrow">↗</span></article>
+        <article class="blood-card card-ab"><div class="blood-symbol">AB</div><div><h3>Tipo AB</h3><p>Pode receber de A, B, AB e O.</p></div><span class="card-arrow">↗</span></article>
+        <article class="blood-card card-o"><div class="blood-symbol">O</div><div><h3>Tipo O</h3><p>Pode receber somente de O.</p></div><span class="card-arrow">↗</span></article>
+      </div>
+      <p class="learning-footnote"><span>i</span> Neste protótipo, consideramos apenas os grupos ABO e a compatibilidade simplificada para transfusão de hemácias. Na prática, a transfusão exige avaliação profissional e testes de compatibilidade.</p>
+    </section>
+
+    <section class="game-section" id="jogo">
+      <div class="game-top section-wrap"><div><p class="eyebrow">PRONTO PARA AJUDAR?</p><h2>Missão <span>hospital.</span></h2></div><p class="game-subtitle">Leia a carteirinha. Escolha o tipo compatível.<br>Uma equipe está contando com você.</p></div>
+      <div class="game-board section-wrap">
+        <div class="hospital-scene">
+          <div class="scene-label"><span class="live-dot"></span> PRONTO-SOCORRO <span class="scene-room">QUARTO 04</span></div>
+          <div class="scene-window"><i></i><i></i><i></i><i></i></div><div class="scene-wall-cross">+</div>
+          <div class="monitor"><div class="monitor-top">♥ PACIENTE <span>●</span></div><svg viewBox="0 0 140 34" role="img" aria-label="Monitor cardíaco"><path d="M2 18h28l8-1 8-13 10 27 9-18 7 5h28l7-1 8-13 10 27 7-13h12"/></svg><small>98 <span>BPM</span></small></div>
+          <div class="iv-stand"><div class="iv-top"></div><div class="iv-pole"></div><div class="scene-bag"><div class="scene-bag-type" id="sceneBagType">?</div><div class="scene-bag-liquid"></div></div><div class="iv-tube"></div><div class="iv-base"></div></div>
+          <div class="patient-bed"><div class="bed-pillow"></div><div class="patient-head"><div class="patient-hair"></div><div class="patient-face"><i></i><i></i><b></b></div></div><div class="patient-body"><span class="body-heart">♥</span></div><div class="bed-frame"></div><div class="bed-leg leg-left"></div><div class="bed-leg leg-right"></div><div class="bed-wheel wheel-left"></div><div class="bed-wheel wheel-right"></div></div>
+          <div class="scene-plant"><i></i><i></i><i></i><b></b></div>
+          <div class="scene-floor"></div>
+          <div class="scene-patient-tag"><span class="tag-heart">♥</span><span>SEU CUIDADO<br><b>FAZ A DIFERENÇA</b></span></div>
+          <div class="scene-success" id="sceneSuccess" aria-hidden="true">♥</div>
+        </div>
+        <aside class="mission-panel">
+          <div class="mission-progress"><span>CASOS ATENDIDOS</span><b id="score">0 <i>/ 4</i></b><div class="progress-track"><span id="progressFill"></span></div></div>
+          <div class="patient-card" id="patientCard">
+            <div class="id-top"><span>HEMOV<span>IDA</span> <small>· CARTÃO DO PACIENTE</small></span><span class="id-chip">✳</span></div>
+            <div class="id-content"><div class="avatar" id="avatar"><span class="avatar-hair"></span><span class="avatar-face"><i></i><i></i><b></b></span><span class="avatar-shirt"></span></div><div class="id-details"><small>PACIENTE</small><h3 id="patientName">Carregando...</h3><small>TIPO SANGUÍNEO</small><div class="patient-blood" id="patientBlood">?</div></div></div>
+            <div class="id-bottom"><span>HOSPITAL VIDA NOVA</span><span>♥ PRIORIDADE</span></div>
+          </div>
+          <div class="choice-heading"><div><h3>Escolha uma bolsa</h3><p>Qual tipo pode ajudar este paciente?</p></div><span class="choice-count">01—04</span></div>
+          <div class="blood-choices" id="bloodChoices" aria-label="Escolha um tipo de bolsa"></div>
+          <div class="game-feedback" id="feedback" role="status" aria-live="polite">Selecione uma bolsa para iniciar.</div>
+          <button class="button button-red next-button" id="nextButton" hidden>Próximo paciente <span>→</span></button>
+          <button class="reset-button" id="resetButton" hidden>Jogar novamente ↻</button>
+          <p class="game-disclaimer">Jogo educativo com regras ABO simplificadas. Na vida real, a equipe de saúde realiza testes antes de uma transfusão.</p>
+        </aside>
+      </div>
+    </section>
+    <footer><a class="brand" href="#inicio"><span class="brand-mark">♥</span><span>HEMO<span class="brand-light">VIDA</span></span></a><span>Aprender também pode salvar vidas.</span><a href="#inicio">Voltar ao topo ↑</a></footer>
+  </main>
+</body>
+</html>

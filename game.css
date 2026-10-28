@@ -1,0 +1,548 @@
+:root {
+    --primary-color: #174a7e;
+    --accent-color: #2785c5;
+    --bg-light: #eaf4fb;
+    --bg-card: #f7fbfe;
+    --text-dark: #183247;
+    --border-radius: 8px;
+    --transition-fast: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    text-align: center;
+}
+p {
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+header .Inicio{
+    background-color: var(--primary-color);
+    color: white;
+}
+header{
+    color: var(--text-dark);
+}
+
+header, nav {
+    text-align: center;
+}
+header h1 { margin: 0; font-size: 46px; }
+
+.descricao-inicio{ 
+    color: white}
+
+nav {
+    background-color: #ffffff;
+    padding: 15px;
+    border-bottom: 1px solid #c7dceb;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+main{
+    height: 100%;
+    border-radius: 60px;
+    background-color: #dcecf7;
+    width: 85%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+section{
+    background-color: #ffffff;
+    margin: 10px 0 30px;
+    padding: 30px;
+    border-radius: 50px;
+}
+
+section h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+/* Cabeçalho e navegação */
+.topbar {
+  
+}
+
+.brand {
+  
+}
+
+.brand-mark {
+  
+}
+
+.brand-light {
+  
+}
+
+.top-cta {
+  
+}
+
+/* Apresentação inicial (Hero) */
+.hero {
+  
+}
+
+.hero-copy {
+  
+}
+
+.eyebrow {
+  
+}
+
+.pulse-dot {
+  
+}
+
+.hero-intro {
+  
+}
+
+.button {
+  
+}
+
+.button-red {
+  
+}
+
+.hero-note {
+  
+}
+
+.note-icon {
+  
+}
+
+.hero-art {
+  
+}
+
+.art-orbit {
+  
+}
+
+.orbit-one {
+  
+}
+
+.orbit-two {
+  
+}
+
+.art-cross {
+  
+}
+
+.art-spark {
+  
+}
+
+.spark-one {
+  
+}
+
+.spark-two {
+  
+}
+
+.blood-bag {
+  
+}
+
+.bag-hook {
+  
+}
+
+.bag-cap {
+  
+}
+
+.bag-label {
+  
+}
+
+.bag-brand {
+  
+}
+
+.bag-type {
+  
+}
+
+.bag-fluid {
+  
+}
+
+.bag-drop {
+  
+}
+
+.art-caption {
+  
+}
+
+.caption-pulse {
+  
+}
+
+.art-sticker {
+  
+}
+
+.hero-bottom {
+  
+}
+
+/* Seção educativa */
+.learn {
+  
+}
+
+.section-wrap {
+  
+}
+
+.section-heading {
+  
+}
+
+.section-lede {
+  
+}
+
+.blood-grid {
+  
+}
+
+.blood-card {
+  
+}
+
+.card-a {
+  
+}
+
+.card-b {
+  
+}
+
+.card-ab {
+  
+}
+
+.card-o {
+  
+}
+
+.blood-symbol {
+  
+}
+
+.card-arrow {
+  
+}
+
+.learning-footnote {
+  
+}
+
+/* Título e estrutura do jogo */
+.game-section {
+  
+}
+
+.game-top {
+  
+}
+
+.game-subtitle {
+  
+}
+
+.game-board {
+  
+}
+
+/* Cenário do hospital */
+.hospital-scene {
+  
+}
+
+.scene-label {
+  
+}
+
+.live-dot {
+  
+}
+
+.scene-room {
+  
+}
+
+.scene-window {
+  
+}
+
+.scene-wall-cross {
+  
+}
+
+.monitor {
+  
+}
+
+.monitor-top {
+  
+}
+
+.iv-stand {
+  
+}
+
+.iv-top {
+  
+}
+
+.iv-pole {
+  
+}
+
+.scene-bag {
+  
+}
+
+.scene-bag-type {
+  
+}
+
+.scene-bag-liquid {
+  
+}
+
+.iv-tube {
+  
+}
+
+.iv-base {
+  
+}
+
+.patient-bed {
+  
+}
+
+.bed-pillow {
+  
+}
+
+.patient-head {
+  
+}
+
+.patient-hair {
+  
+}
+
+.patient-face {
+  
+}
+
+.patient-body {
+  
+}
+
+.body-heart {
+  
+}
+
+.bed-frame {
+  
+}
+
+.bed-leg {
+  
+}
+
+.leg-left {
+  
+}
+
+.leg-right {
+  
+}
+
+.bed-wheel {
+  
+}
+
+.wheel-left {
+  
+}
+
+.wheel-right {
+  
+}
+
+.scene-plant {
+  
+}
+
+.scene-floor {
+  
+}
+
+.scene-patient-tag {
+  
+}
+
+.tag-heart {
+  
+}
+
+.scene-success {
+  
+}
+
+/* Painel da missão e paciente */
+.mission-panel {
+  
+}
+
+.mission-progress {
+  
+}
+
+.progress-track {
+  
+}
+
+.patient-card {
+  
+}
+
+.id-top {
+  
+}
+
+.id-chip {
+  
+}
+
+.id-content {
+  
+}
+
+.avatar {
+  
+}
+
+.avatar-hair {
+  
+}
+
+.avatar-face {
+  
+}
+
+.avatar-shirt {
+  
+}
+
+.id-details {
+  
+}
+
+.patient-blood {
+  
+}
+
+.id-bottom {
+  
+}
+
+/* Escolhas, mensagens e controles */
+.choice-heading {
+  
+}
+
+.choice-count {
+  
+}
+
+.blood-choices {
+  
+}
+
+.blood-choice {
+  
+}
+
+.game-feedback {
+  
+}
+
+.next-button {
+  
+}
+
+.reset-button {
+  
+}
+
+.game-disclaimer {
+  
+}
+
+.correct {
+  
+}
+
+.wrong {
+  
+}
+
+.good {
+  
+}
+
+.bad {
+  
+}
+
+.complete {
+  
+}
+
+.is-happy {
+  
+}
+
+/* Rodapé */
+.footer {
+  
+}
