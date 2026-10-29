@@ -1,548 +1,706 @@
+/* ==========================================================
+   HEMOVIDA — JOGO DOS TIPOS SANGUÍNEOS
+   Paleta: #70233e  #8e3e59  #ac5a74  #cb758e  #e991a9
+   Visual simples, sem animações.
+   ========================================================== */
+
 :root {
-    --primary-color: #174a7e;
-    --accent-color: #2785c5;
-    --bg-light: #eaf4fb;
-    --bg-card: #f7fbfe;
-    --text-dark: #183247;
-    --border-radius: 8px;
-    --transition-fast: 0.3s;
+    --rosa-1: #70233e;
+    --rosa-2: #8e3e59;
+    --rosa-3: #ac5a74;
+    --rosa-4: #cb758e;
+    --rosa-5: #e991a9;
+    --fundo: #fdf3f6;    /* tom bem claro derivado da paleta */
+    --branco: #ffffff;
+    --raio: 12px;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+
+/* garante que o atributo hidden funcione mesmo em botões estilizados */
+[hidden] { display: none !important; }
+
+html { scroll-behavior: auto; }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-dark);
-    text-align: center;
-}
-p {
-    line-height: 1.6;
-    color: var(--text-dark);
-}
-header .Inicio{
-    background-color: var(--primary-color);
-    color: white;
-}
-header{
-    color: var(--text-dark);
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--rosa-1);
+    line-height: 1.5;
 }
 
-header, nav {
-    text-align: center;
-}
-header h1 { margin: 0; font-size: 46px; }
-
-.descricao-inicio{ 
-    color: white}
+h1, h2, h3, p { margin: 0; }
 
 nav {
-    background-color: #ffffff;
+    background-color: var(--rosa-1);
     padding: 15px;
-    border-bottom: 1px solid #c7dceb;
     position: sticky;
     top: 0;
     z-index: 1000;
+    text-align: center;
 }
 
 nav a {
-    color: var(--primary-color);
+    color: var(--branco);
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 12px;
     font-weight: bold;
+    display: inline-block;
+    padding: 4px 0;
 }
 
 nav a:hover {
-    color: var(--accent-color);
+    color: var(--rosa-5);
+    text-decoration: underline;
 }
 
-main{
-    height: 100%;
-    border-radius: 60px;
-    background-color: #dcecf7;
-    width: 85%;
-    max-width: 1000px;
-    margin: auto;
-}
 
-section{
-    background-color: #ffffff;
-    margin: 10px 0 30px;
-    padding: 30px;
-    border-radius: 50px;
-}
+button { font-family: inherit; }
 
-section h2 {
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 10px;
-}
-/* Cabeçalho e navegação */
+/* ---------- Cabeçalho ---------- */
 .topbar {
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background-color: var(--rosa-1);
+    color: var(--branco);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .brand {
-  
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
-.brand-mark {
-  
-}
-
-.brand-light {
-  
-}
+.brand-mark { color: var(--rosa-5); }
+.brand-light { color: var(--rosa-5); }
 
 .top-cta {
-  
+    padding: 8px 16px;
+    border: 2px solid var(--rosa-5);
+    border-radius: 999px;
+    color: var(--branco);
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* Apresentação inicial (Hero) */
-.hero {
-  
+.top-cta:hover { background-color: var(--rosa-2); }
+
+/* ---------- Estrutura geral ---------- */
+main {
+    width: 92%;
+    max-width: 1000px;
+    margin: 24px auto;
 }
 
-.hero-copy {
-  
-}
+.section-wrap { padding: 24px; }
 
 .eyebrow {
-  
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--rosa-2);
 }
 
-.pulse-dot {
-  
+.pulse-dot,
+.live-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--rosa-2);
 }
 
-.hero-intro {
-  
-}
-
+/* ---------- Botões ---------- */
 .button {
-  
+    display: inline-block;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 999px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .button-red {
-  
+    background-color: var(--rosa-2);
+    color: var(--branco);
+}
+
+.button-red:hover { background-color: var(--rosa-1); }
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--rosa-3);
+    outline-offset: 2px;
+}
+
+/* ---------- Apresentação inicial ---------- */
+.hero {
+    background-color: var(--branco);
+    border-radius: var(--raio);
+    padding: 40px 24px 24px;
+    margin-bottom: 24px;
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.hero h1 {
+    font-size: 44px;
+    line-height: 1.1;
+    color: var(--rosa-1);
+}
+
+.hero h1 span { color: var(--rosa-3); }
+
+.hero-intro {
+    max-width: 520px;
+    font-size: 18px;
 }
 
 .hero-note {
-  
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--rosa-2);
 }
 
-.note-icon {
-  
-}
-
-.hero-art {
-  
-}
-
-.art-orbit {
-  
-}
-
-.orbit-one {
-  
-}
-
-.orbit-two {
-  
-}
-
-.art-cross {
-  
-}
-
-.art-spark {
-  
-}
-
-.spark-one {
-  
-}
-
-.spark-two {
-  
-}
-
-.blood-bag {
-  
-}
-
-.bag-hook {
-  
-}
-
-.bag-cap {
-  
-}
-
-.bag-label {
-  
-}
-
-.bag-brand {
-  
-}
-
-.bag-type {
-  
-}
-
-.bag-fluid {
-  
-}
-
-.bag-drop {
-  
-}
-
-.art-caption {
-  
-}
-
-.caption-pulse {
-  
-}
-
-.art-sticker {
-  
-}
+.note-icon { color: var(--rosa-3); font-size: 18px; }
 
 .hero-bottom {
-  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 32px;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 2px solid var(--rosa-5);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--rosa-2);
 }
 
-/* Seção educativa */
+/* ---------- Seção educativa ---------- */
 .learn {
-  
-}
-
-.section-wrap {
-  
+    background-color: var(--branco);
+    border-radius: var(--raio);
+    margin-bottom: 24px;
 }
 
 .section-heading {
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
-.section-lede {
-  
+.section-heading h2,
+.game-top h2 {
+    font-size: 32px;
+    line-height: 1.15;
+    color: var(--rosa-1);
 }
+
+.section-heading h2 span,
+.game-top h2 span { color: var(--rosa-3); }
+
+.section-lede { max-width: 380px; }
 
 .blood-grid {
-  
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
 }
 
 .blood-card {
-  
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    background-color: var(--fundo);
+    border: 2px solid var(--rosa-5);
+    border-radius: var(--raio);
 }
 
-.card-a {
-  
-}
-
-.card-b {
-  
-}
-
-.card-ab {
-  
-}
-
-.card-o {
-  
-}
+.blood-card h3 { font-size: 18px; color: var(--rosa-1); }
+.blood-card p { font-size: 14px; }
 
 .blood-symbol {
-  
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--branco);
+    background-color: var(--rosa-1);
 }
 
-.card-arrow {
-  
-}
+.card-a  .blood-symbol { background-color: var(--rosa-1); }
+.card-b  .blood-symbol { background-color: var(--rosa-2); }
+.card-ab .blood-symbol { background-color: var(--rosa-3); }
+.card-o  .blood-symbol { background-color: var(--rosa-4); color: var(--rosa-1); }
+
+.card-arrow { display: none; }
 
 .learning-footnote {
-  
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 12px 14px;
+    background-color: var(--fundo);
+    border-left: 4px solid var(--rosa-3);
+    border-radius: 8px;
+    font-size: 14px;
 }
 
-/* Título e estrutura do jogo */
+.learning-footnote > span {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--rosa-2);
+    color: var(--branco);
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+}
+
+/* ---------- Título e estrutura do jogo ---------- */
 .game-section {
-  
+    background-color: var(--branco);
+    border-radius: var(--raio);
 }
 
 .game-top {
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding-bottom: 0;
 }
 
-.game-subtitle {
-  
-}
+.game-subtitle { max-width: 360px; }
 
 .game-board {
-  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
 }
 
-/* Cenário do hospital */
+/* ---------- Cenário do hospital (versão simplificada) ---------- */
 .hospital-scene {
-  
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--fundo);
+    border: 2px solid var(--rosa-5);
+    border-radius: var(--raio);
 }
 
 .scene-label {
-  
-}
-
-.live-dot {
-  
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .scene-room {
-  
+    margin-left: auto;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background-color: var(--rosa-1);
+    color: var(--branco);
+    font-size: 12px;
 }
 
-.scene-window {
-  
-}
-
-.scene-wall-cross {
-  
-}
-
+/* monitor cardíaco */
 .monitor {
-  
+    padding: 12px;
+    background-color: var(--rosa-1);
+    border-radius: 8px;
+    color: var(--branco);
 }
 
 .monitor-top {
-  
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
+.monitor-top span { color: var(--rosa-5); }
+
+.monitor svg {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin: 6px 0;
+}
+
+.monitor svg path {
+    fill: none;
+    stroke: var(--rosa-5);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.monitor small { font-size: 22px; font-weight: bold; }
+.monitor small span { font-size: 12px; color: var(--rosa-5); }
+
+/* bolsa de sangue */
 .iv-stand {
-  
-}
-
-.iv-top {
-  
-}
-
-.iv-pole {
-  
+    display: flex;
+    justify-content: center;
 }
 
 .scene-bag {
-  
-}
-
-.scene-bag-type {
-  
+    position: relative;
+    width: 110px;
+    height: 140px;
+    overflow: hidden;
+    background-color: var(--branco);
+    border: 3px solid var(--rosa-2);
+    border-radius: 14px 14px 30px 30px;
 }
 
 .scene-bag-liquid {
-  
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;
+    background-color: var(--rosa-4);
 }
 
-.iv-tube {
-  
+.scene-bag-type {
+    position: relative;
+    z-index: 1;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--rosa-1);
 }
 
-.iv-base {
-  
+/* mensagem de sucesso (aparece quando a cena fica "feliz") */
+.scene-success {
+    display: none;
+    text-align: center;
+    font-size: 40px;
+    color: var(--rosa-2);
 }
 
-.patient-bed {
-  
-}
-
-.bed-pillow {
-  
-}
-
-.patient-head {
-  
-}
-
-.patient-hair {
-  
-}
-
-.patient-face {
-  
-}
-
-.patient-body {
-  
-}
-
-.body-heart {
-  
-}
-
-.bed-frame {
-  
-}
-
-.bed-leg {
-  
-}
-
-.leg-left {
-  
-}
-
-.leg-right {
-  
-}
-
-.bed-wheel {
-  
-}
-
-.wheel-left {
-  
-}
-
-.wheel-right {
-  
-}
-
-.scene-plant {
-  
-}
-
-.scene-floor {
-  
-}
+.is-happy .scene-success { display: block; }
+.is-happy { border-color: var(--rosa-2); }
 
 .scene-patient-tag {
-  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-align: left;
 }
 
-.tag-heart {
-  
-}
+.tag-heart { font-size: 22px; color: var(--rosa-3); }
 
-.scene-success {
-  
-}
+/* elementos puramente decorativos escondidos para manter o jogo simples */
+.scene-window,
+.scene-wall-cross,
+.iv-top,
+.iv-pole,
+.iv-tube,
+.iv-base,
+.patient-bed,
+.scene-plant,
+.scene-floor { display: none; }
 
-/* Painel da missão e paciente */
+/* ---------- Painel da missão ---------- */
 .mission-panel {
-  
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .mission-progress {
-  
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
+
+.mission-progress b { font-size: 22px; }
+.mission-progress i { font-size: 14px; font-style: normal; color: var(--rosa-3); }
 
 .progress-track {
-  
+    flex-basis: 100%;
+    height: 12px;
+    overflow: hidden;
+    background-color: var(--rosa-5);
+    border-radius: 999px;
 }
 
+.progress-track span {
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: var(--rosa-1);
+}
+
+.complete .mission-progress b { color: var(--rosa-2); }
+.complete .patient-card { border-color: var(--rosa-2); }
+
+/* ---------- Cartão do paciente ---------- */
 .patient-card {
-  
+    overflow: hidden;
+    background-color: var(--branco);
+    border: 2px solid var(--rosa-1);
+    border-radius: var(--raio);
 }
 
 .id-top {
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 14px;
+    background-color: var(--rosa-1);
+    color: var(--branco);
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.id-chip {
-  
-}
+.id-top small { font-weight: normal; }
+.id-top span span { color: var(--rosa-5); }
+.id-chip { color: var(--rosa-5); }
 
 .id-content {
-  
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 14px;
 }
 
+/* avatar simplificado: um círculo com um rosto */
 .avatar {
-  
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--rosa-5);
 }
 
-.avatar-hair {
-  
+.avatar > span { display: none; }
+
+.avatar::after {
+    content: "☺";
+    font-size: 40px;
+    color: var(--rosa-1);
 }
 
-.avatar-face {
-  
+.id-details small {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--rosa-3);
 }
 
-.avatar-shirt {
-  
-}
-
-.id-details {
-  
+.id-details h3 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: var(--rosa-1);
 }
 
 .patient-blood {
-  
+    display: inline-block;
+    min-width: 54px;
+    padding: 2px 14px;
+    border-radius: 8px;
+    background-color: var(--rosa-2);
+    color: var(--branco);
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .id-bottom {
-  
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 14px;
+    border-top: 1px solid var(--rosa-5);
+    background-color: var(--fundo);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: var(--rosa-2);
 }
 
-/* Escolhas, mensagens e controles */
+/* ---------- Escolhas ---------- */
 .choice-heading {
-  
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
 }
+
+.choice-heading h3 { font-size: 18px; }
+.choice-heading p { font-size: 14px; }
 
 .choice-count {
-  
+    padding: 2px 10px;
+    border-radius: 999px;
+    background-color: var(--rosa-5);
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
 }
 
 .blood-choices {
-  
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 .blood-choice {
-  
+    padding: 16px 0;
+    border: 2px solid var(--rosa-2);
+    border-radius: 10px;
+    background-color: var(--branco);
+    color: var(--rosa-1);
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
+.blood-choice:hover:not(:disabled) { background-color: var(--rosa-5); }
+
+.blood-choice:disabled { cursor: default; }
+
+/* acerto: fundo escuro + ✓  |  erro: fundo claro tracejado + ✗ */
+.blood-choice.correct {
+    background-color: var(--rosa-1);
+    border-color: var(--rosa-1);
+    color: var(--branco);
+}
+
+.blood-choice.correct::after { content: " ✓"; }
+
+.blood-choice.wrong {
+    background-color: var(--rosa-5);
+    border-style: dashed;
+    border-color: var(--rosa-1);
+}
+
+.blood-choice.wrong::after { content: " ✗"; }
+
+/* ---------- Mensagens ---------- */
 .game-feedback {
-  
+    padding: 12px 14px;
+    background-color: var(--fundo);
+    border-left: 4px solid var(--rosa-4);
+    border-radius: 8px;
+    font-size: 15px;
 }
 
-.next-button {
-  
+.game-feedback.good {
+    border-left-color: var(--rosa-1);
+    background-color: var(--rosa-5);
+    font-weight: bold;
 }
+
+.game-feedback.bad {
+    border-left-color: var(--rosa-2);
+    border-left-style: dashed;
+    background-color: var(--fundo);
+}
+
+.next-button { width: 100%; }
 
 .reset-button {
-  
+    padding: 12px 22px;
+    border: 2px solid var(--rosa-2);
+    border-radius: 999px;
+    background-color: var(--branco);
+    color: var(--rosa-2);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background-color: var(--rosa-2);
+    color: var(--branco);
 }
 
 .game-disclaimer {
-  
+    font-size: 12px;
+    color: var(--rosa-3);
 }
 
-.correct {
-  
+/* ---------- Rodapé ---------- */
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 18px 24px;
+    background-color: var(--rosa-1);
+    border-radius: var(--raio);
+    color: var(--branco);
+    font-size: 14px;
 }
 
-.wrong {
-  
-}
+footer .brand { font-size: 16px; }
 
-.good {
-  
-}
-
-.bad {
-  
-}
-
-.complete {
-  
-}
-
-.is-happy {
-  
-}
-
-/* Rodapé */
-.footer {
-  
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 760px) {
+    .hero h1 { font-size: 34px; }
+    .game-board { grid-template-columns: 1fr; }
+    .section-wrap { padding: 18px; }
+    .topbar { padding: 12px 16px; }
 }

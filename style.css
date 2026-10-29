@@ -1,4 +1,328 @@
+/* ==========================================================
+   SITE: SISTEMA CIRCULATÓRIO
+   Paleta: #70233e  #8e3e59  #ac5a74  #cb758e  #e991a9
+   ========================================================== */
 
+:root {
+    --rosa-1: #70233e;   /* mais escuro: títulos, menu, botões */
+    --rosa-2: #8e3e59;   /* hover, destaques */
+    --rosa-3: #ac5a74;   /* bordas, detalhes */
+    --rosa-4: #cb758e;   /* fundos de destaque */
+    --rosa-5: #e991a9;   /* mais claro: fundos suaves */
+    --fundo: #fdf3f6;    /* tom bem claro derivado da paleta */
+    --branco: #ffffff;
+
+    --primary-color: var(--rosa-1);
+    --accent-color: var(--rosa-2);
+    --text-dark: var(--rosa-1);
+    --border-radius: 8px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--fundo);
+    color: var(--text-dark);
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* ---------- Menu ---------- */
+nav {
+    background-color: var(--rosa-1);
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    text-align: center;
+}
+
+nav a {
+    color: var(--branco);
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 0;
+}
+
+nav a:hover {
+    color: var(--rosa-5);
+    text-decoration: underline;
+}
+
+/* ---------- Cabeçalho (página inicial) ---------- */
+header {
+    background-color: var(--rosa-2);
+    color: var(--branco);
+    padding: 30px 20px;
+}
+
+header h1 {
+    margin: 0 0 20px;
+    font-size: 42px;
+}
+
+header h2,
+header p {
+    color: var(--branco);
+}
+
+/* ---------- Conteúdo principal ---------- */
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 10px 20px;
+    background-color: var(--rosa-5);
+    border-radius: 30px;
+}
+
+section {
+    background-color: var(--branco);
+    margin: 20px 0;
+    padding: 30px;
+    border-radius: 24px;
+}
+
+section h2 {
+    color: var(--rosa-1);
+    border-bottom: 2px solid var(--rosa-3);
+    padding-bottom: 10px;
+}
+
+h3 { color: var(--rosa-2); }
+
+/* ---------- Destaque com imagem + texto ---------- */
+.destaque-inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: left;
+    margin: 20px auto;
+}
+
+.destaque-inicio img {
+    width: 430px;
+    max-width: 48%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+.texto-destaque { flex: 1; }
+
+.texto-espiral {
+    background-color: var(--branco);
+    width: 85%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+/* ---------- Acordeão ---------- */
+.acordeao {
+    margin: 12px 0;
+    border: 1px solid var(--rosa-3);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: left;
+}
+
+.titulo-acordeao {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border: none;
+    background-color: var(--rosa-2);
+    color: var(--branco);
+    font-size: 17px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+}
+
+.titulo-acordeao:hover { background-color: var(--rosa-1); }
+
+.titulo-acordeao span { font-size: 22px; }
+
+.conteudo-acordeao {
+    display: none;               /* o script.js alterna para block */
+    padding: 10px 20px 16px;
+    background-color: var(--fundo);
+}
+
+/* ---------- Saúde cardiovascular ---------- */
+.blocos-cardiovascular {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+/* o segundo botão está com a classe "blocos-cardiovascular" no HTML;
+   este seletor garante que ele fique igual ao primeiro */
+.bloco-cardiovascular,
+button.blocos-cardiovascular {
+    display: block;
+    flex: 1;
+    max-width: 320px;
+    padding: 18px;
+    border: 2px solid var(--rosa-3);
+    border-radius: var(--border-radius);
+    background-color: var(--fundo);
+    color: var(--rosa-1);
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+}
+
+.bloco-cardiovascular:hover,
+button.blocos-cardiovascular:hover {
+    background-color: var(--rosa-5);
+}
+
+.bloco-cardiovascular span,
+button.blocos-cardiovascular span {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--rosa-2);
+}
+
+.seta-cardiovascular {
+    align-self: center;
+    font-size: 28px;
+    color: var(--rosa-3);
+}
+
+.conteudo-cardiovascular {
+    margin-top: 16px;
+    padding: 16px 20px;
+    background-color: var(--fundo);
+    border-left: 4px solid var(--rosa-2);
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+/* ---------- Quiz ---------- */
+#quiz-container { margin-top: 20px; }
+
+#progresso {
+    font-weight: bold;
+    color: var(--rosa-2);
+}
+
+#alternativas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#alternativas button {
+    padding: 12px;
+    border: 2px solid var(--rosa-3);
+    border-radius: 6px;
+    background-color: var(--branco);
+    color: var(--rosa-1);
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+#alternativas button:hover:not(:disabled) { background-color: var(--rosa-5); }
+
+/* acerto: fundo escuro + ✓  |  erro: fundo claro + ✗ (não depende só da cor) */
+#alternativas button.correta {
+    background-color: var(--rosa-1);
+    border-color: var(--rosa-1);
+    color: var(--branco);
+}
+
+#alternativas button.correta::before { content: "✓ "; font-weight: bold; }
+
+#alternativas button.errada {
+    background-color: var(--rosa-5);
+    border-color: var(--rosa-1);
+    border-style: dashed;
+    color: var(--rosa-1);
+}
+
+#alternativas button.errada::before { content: "✗ "; font-weight: bold; }
+
+#alternativas button:disabled { cursor: default; }
+
+#feedback {
+    margin-top: 15px;
+    padding: 12px;
+    background-color: var(--fundo);
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    color: var(--rosa-1);
+}
+
+#feedback:empty { display: none; }
+
+#proxima,
+#refazer {
+    background-color: var(--rosa-1);
+    color: var(--branco);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+#proxima { display: none; margin: 16px auto 0; }
+#refazer { font-weight: bold; }
+#proxima:hover,
+#refazer:hover { background-color: var(--rosa-2); }
+
+/* ---------- Rodapé ---------- */
+footer {
+    background-color: var(--rosa-1);
+    color: var(--branco);
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+footer p { color: var(--branco); margin: 6px 0; }
+
+/* ---------- Acessibilidade ---------- */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--rosa-5);
+    outline-offset: 2px;
+}
+
+/* ---------- Telas pequenas ---------- */
+@media (max-width: 700px) {
+    header h1 { font-size: 30px; }
+    main { width: 96%; padding: 6px 10px; }
+    section { padding: 20px 16px; }
+    .destaque-inicio { flex-direction: column; text-align: center; }
+    .destaque-inicio img { max-width: 100%; }
+    .blocos-cardiovascular { flex-direction: column; align-items: center; }
+    .seta-cardiovascular { transform: rotate(90deg); }
+}
 /*QUIZ*/
 /*COMPONENTE DO QUIZ E RODAPÉ*/
 #quiz-container { margin-top: 20px; }
